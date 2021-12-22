@@ -6,8 +6,9 @@ import get_window
 
 
 def saveScreenShot(x, y, width, height, path):
-    loa_window = get_window.find_loa_window()
-    loa_dc = win32gui.GetWindowDC(loa_window["hwnd"])
+    # loa_window = get_window.find_loa_window()
+    # loa_dc = win32gui.GetWindowDC(loa_window["hwnd"])
+    loa_dc = win32gui.GetWindowDC(win32gui.GetDesktopWindow())
     img_dc = win32ui.CreateDCFromHandle(loa_dc)
 
     # # create a memory based device context
@@ -23,11 +24,15 @@ def saveScreenShot(x, y, width, height, path):
 
     # # save the bitmap to a file
     screenshot.SaveBitmapFile(mem_dc, path)
-    # bits = screenshot.GetBitmapBits()
+    # bits = screenshot.GetBitmapBits(True)
     # print(bits)
     # # free our objects
     mem_dc.DeleteDC()
     win32gui.DeleteObject(screenshot.GetHandle())
 
+# 1250 65 1300 85
 
-saveScreenShot(0, 0, 1000, 1000, "as.bmp")
+
+saveScreenShot(1250, 65, 50, 20, "test.bmp")
+# f = open("test.bmp", 'rb')
+# print(f.read())
