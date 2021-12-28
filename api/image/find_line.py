@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 # from matplotlib import pyplot as plt
 
-src = cv2.imread('test_lined.bmp', cv2.IMREAD_GRAYSCALE)
+src = cv2.imread('test.bmp', cv2.IMREAD_GRAYSCALE)
 # dst = cv2.threshold(src, 120, 255, cv2.THRESH_BINARY)[1]
 
 # print(dst.shape)

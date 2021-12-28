@@ -6,9 +6,9 @@ import get_window
 
 
 def saveScreenShot(x, y, width, height, path):
-    # loa_window = get_window.find_loa_window()
-    # loa_dc = win32gui.GetWindowDC(loa_window["hwnd"])
-    loa_dc = win32gui.GetWindowDC(win32gui.GetDesktopWindow())
+    loa_window = get_window.find_loa_window()
+    loa_dc = win32gui.GetWindowDC(loa_window["hwnd"])
+    # loa_dc = win32gui.GetWindowDC(win32gui.GetDesktopWindow())
     img_dc = win32ui.CreateDCFromHandle(loa_dc)
 
     # # create a memory based device context
